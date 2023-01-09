@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoadMoreButton from './Button/Button';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Loader from './Loader/Loader';
-import Modal from './Modal/Modal';
+import {Modal} from './Modal/Modal';
 import SearchBar from './Searchbar/Searchbar';
 import fetchPics from '../components/service/ApiService';
 
