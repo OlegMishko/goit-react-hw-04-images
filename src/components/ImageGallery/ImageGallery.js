@@ -1,0 +1,28 @@
+import PropTypes from 'prop-types';
+import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+
+import { ImageGalleryList } from './ImageGallery.styled';
+
+export default function ImageGallery({ images, selectedImage }) {
+  return (
+    <ImageGalleryList>
+      {images.map(({ id, webformatURL, tags, largeImageURL }) => (
+        <ImageGalleryItem
+          key={id}
+          previewImg={webformatURL}
+          tags={tags}
+          selectedImage={() => selectedImage(largeImageURL, tags)}
+        />
+      ))}
+    </ImageGalleryList>
+  );
+}
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ),
+  selectedImage: PropTypes.func,
+};
